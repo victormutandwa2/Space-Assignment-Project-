@@ -198,13 +198,16 @@ public class BookSpace {
                     String end = endComboBox.getSelectedItem().toString();
                     String day = dayComboBox.getSelectedItem().toString();
                     
-                    if (Integer.parseInt(start.substring(0, 1)) >= Integer.parseInt(end.substring(0, 1))) {
+                    String militaryStart = Test.convertToMilitaryTime(start).substring(0, 2);
+                    String militaryEnd = Test.convertToMilitaryTime(end).substring(0, 2);
+
+                    if (Integer.parseInt(militaryStart) >= Integer.parseInt(militaryEnd)) {
                     	JOptionPane.showMessageDialog(frame,
                         "Start time cannot be more than or equal to end time!",
                         "Inane error", JOptionPane.ERROR_MESSAGE);
                     }
                     else {
-                    	Interval conflict = resolveConflict(start, end, day, space);
+                        Interval conflict = resolveConflict(militaryStart, militaryEnd, day, space);
                         if (conflict == null) {
                         	Interval interval = new Interval(start, end);
                             LinkedList<String> singleDayList = new LinkedList<>();
@@ -295,9 +298,17 @@ public class BookSpace {
 		
 		for (Interval interval: blocked) {
 			if (interval.getDays().getFirst().equals(day)) {
-				if (interval.getStart().equals(start))
+				int givenStart = Integer.parseInt(start.substring(0, 2));
+				int givenEnd = Integer.parseInt(end.substring(0, 2));
+				int intervalStart = Integer.parseInt(Test.convertToMilitaryTime(interval.getStart()).substring(0, 2));
+				int intervalEnd = Integer.parseInt(Test.convertToMilitaryTime(interval.getEnd()).substring(0, 2));
+				if (intervalStart == givenStart)
 					return interval;
-				if (interval.getEnd().equals(end))
+				if (intervalEnd == givenEnd)
+					return interval;
+				if (givenStart > intervalStart && givenStart < intervalEnd)
+					return interval;
+				if (givenEnd > intervalStart && givenEnd < intervalEnd)
 					return interval;
 			}
 		}

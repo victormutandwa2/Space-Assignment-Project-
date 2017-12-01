@@ -192,7 +192,9 @@ public class AddSpaces {
 				if (chckbxSaturday.isSelected())
 					time.addDay("Saturday");
 				
-				if (Integer.parseInt(start.substring(0, 1)) >= Integer.parseInt(end.substring(0, 1))) {
+				String militaryStart = Test.convertToMilitaryTime(start).substring(0, 2);
+				String militaryEnd = Test.convertToMilitaryTime(end).substring(0, 2);
+				if (Integer.parseInt(militaryStart) >= Integer.parseInt(militaryEnd)) {
                 	JOptionPane.showMessageDialog(frame,
                     "Start time cannot be more than or equal to end time!",
                     "Inane error", JOptionPane.ERROR_MESSAGE);
