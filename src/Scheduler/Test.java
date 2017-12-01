@@ -62,9 +62,6 @@ public class Test {
 		    myObjectInputStream.close();
 		    return schedulerObj;
 		}
-		catch (Exception e) { 
-			System.out.println(e.toString());
-			return new Scheduler();
-		}		
+		catch (Exception e) { return new Scheduler(); }
 	}
 }
