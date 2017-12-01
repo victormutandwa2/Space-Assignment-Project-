@@ -105,7 +105,10 @@ public class BookSpace {
 		availabilityList.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		availabilityList.setBounds(26, 182, 345, 275);
 		DefaultListModel<Space> spaceModel = new DefaultListModel<>();
-		for (Space space: Test.scheduler.getAvailableSpaces()) { spaceModel.addElement(space); }
+		for (Space space: Test.scheduler.getAvailableSpaces()) {
+			if (space.getLocation().equals("UC"))
+			    spaceModel.addElement(space);
+		}
 		availabilityList.setModel(spaceModel);
 		availabilityList.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent l) {
@@ -139,24 +142,18 @@ public class BookSpace {
 		JComboBox<String> locationComboBox = new JComboBox<>();
 		locationComboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		locationComboBox.setModel(new DefaultComboBoxModel<String>(
-				new String[] {"All", "UC", "Gym", "Science", "Education", "Library"}
+				new String[] {"UC", "Gym", "Science", "Education", "Library"}
 		));
 		locationComboBox.setBounds(133, 78, 184, 39);
 		locationComboBox.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
 				spaceModel.clear();
 				String location = locationComboBox.getSelectedItem().toString();
-				if (location.equals("All")) {
-					for (Space space: Test.scheduler.getAvailableSpaces()) {
+
+				for (Space space: Test.scheduler.getAvailableSpaces()) {
+					if (space.getLocation().equals(location))
 						spaceModel.addElement(space);
 					}
-				}
-				else {
-					for (Space space: Test.scheduler.getAvailableSpaces()) {
-			    	    if (space.getLocation().equals(location))
-			    		    spaceModel.addElement(space);
-			        }
-				}
 			    frame.repaint();
 			}
 		});
