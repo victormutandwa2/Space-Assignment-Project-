@@ -1,5 +1,31 @@
 # CS3716 Group Project - Scheduling System
 
+## Repository URL
+
+You can find the repository at https://github.com/eeshangarg/CS3716Scheduler
+
+## Description
+
+Our program allows a Principal to set the schedule for various locations
+within an institution. For example, the Principal can say that the Gym is
+available from 1 pm to 7 pm on Monday, Wednesday, and Friday. A coach can
+then make a booking for the Gym and specify a maximum of 5 time slot
+preferences. For example, the coach can then make a booking where he is
+okay with 1 pm to 2 pm on Monday **OR** 3 pm to 4 pm on Friday. Once the
+coach submits the request, the Principal can then review it and accept
+one slot that he thinks is okay, or reject the entire booking.
+
+The coach can view all pending, accepted and rejected bookings. Also,
+there is built-in conflict resolution in our program. If a time slot
+is already booked, another coach cannot make a booking that conflicts
+with that time slot. If the coach tries to make a booking that is
+in conflict with a current accepted booking, the system will report an
+error.
+
+All the objects implement `Serializable` and the schedule is saved by
+serializing the Schedule object and writing it to a file. The object
+is reloaded from the file every time the program is started.
+
 ## Instructions
 
 1. Clone the repository: `git clone https://github.com/eeshangarg/CS3716Scheduler`
