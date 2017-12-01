@@ -57,7 +57,8 @@ is as follows:
 
 4. Uncheck the checkbox **Use Default Location**
 
-5. Click on **Browse** and select the repository you cloned in **Step 1**.
+5. Click on **Browse** and select the `CS3716Scheduler` repository you
+   cloned in **Step 1**.
 
 6. Click on **Finish**.
 
