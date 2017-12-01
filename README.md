@@ -4,6 +4,13 @@
 
 You can find the repository at https://github.com/eeshangarg/CS3716Scheduler
 
+## Course Details
+
+* **Course Name:** Computer Science 3716 - Software Methodology
+* **Instructor:** Dr. Adrian Fiech
+* **Teaching Assistant:** Sipan Ye
+* Memorial University of Newfoundland, St. John's, NL, Canada
+
 ## Description
 
 Our program allows a Principal to set the schedule for various locations
