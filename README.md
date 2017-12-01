@@ -20,7 +20,7 @@ There are four members in our group. **Dr. Fiech is aware of this.**
 * Eeshan Garg (eg3800@mun.ca)
 * Sahil Anand (sa7437@mun.ca
 * Hussein Parpia (hp5702@mun.ca)
-* Victor Mutandwa
+* Victor Mutandwa (vtm806@mun.ca)
 
 ### Point Distribution
 
