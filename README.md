@@ -1,9 +1,5 @@
 # CS3716 Group Project - Scheduling System
 
-## Repository URL
-
-You can find the repository at https://github.com/eeshangarg/CS3716Scheduler
-
 ## Course Details
 
 * **Course Name:** Computer Science 3716 - Software Methodology
